@@ -22,8 +22,7 @@ chmod +x PixelLabelManager.sh
 
 ## Usage
 - Launch from Tools in ArkOS
-- Create your label
-- Save to art, art2, or art3
+- Design your logo/icon (choose color, sizes, text, image, layout (logo, icon, system))
 
 ## Designed for
 https://github.com/ColtonMyers1995/es-theme-PIXEL-OS
