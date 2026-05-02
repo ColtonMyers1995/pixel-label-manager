@@ -1,7 +1,7 @@
-# Pixel Label Manager (ArkOS) by ColtonMyers1995
--Custom-Collection Label-Maker-
+# Pixel Label Manager (ArkOS 2.0) by ColtonMyers1995
+        **Custom-Collection Label-Maker**
 
-A controller-friendly tool for creating custom system/category labels for the PIXEL OS theme.
+A controller-friendly tool for creating custom system-view labels for the PIXEL OS theme.
 The tool operates within ArkOS, giving users a full label-making toolkit.
 The created labels can be applied directly to custom-collections per view (icons, logos, images)
 
@@ -21,7 +21,7 @@ Additional: PIXEL OS's unique design allows this tool to create up to 3 custom i
 - HOW TO USE section for beginners
 
 ## Installation
-Copy the script to:
+Copy the scripts to:
 ```
 /roms/tools/
 ```
@@ -29,10 +29,12 @@ Copy the script to:
 Make executable if needed (not needed for ArkOS 2.0):
 ```
 chmod +x Custom-Collection Label-Maker.sh
+chmod +x Pixel-Label Dependency-Installer.sh
 ```
 
 ## Usage
-- Launch from Tools in ArkOS
+- Run the dependency installer from Tools section
+- Launch tool from Tools section
 - Design your logo/icon/image (choose style, color, sizes, text, image, padding, spacing, type (logo, icon, image))
 
 ## Additional Info
