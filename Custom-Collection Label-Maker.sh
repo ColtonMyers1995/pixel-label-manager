@@ -7,7 +7,7 @@ GITHUB_URL="https://github.com/ColtonMyers1995/es-theme-PIXEL-OS.git"
 if [ "$(id -u)" -ne 0 ]; then
     exec sudo -- "$0" "$@"
 fi
-set -euo pipefail
+set -uo pipefail
 
 CURR_TTY="/dev/tty1"
 printf "\033c" > "$CURR_TTY"
@@ -386,7 +386,7 @@ CH=$(dialog --output-fd 1 --menu "Pixel Toolkit" 17 60 3 \
 1 "Makers" \
 2 "Settings" \
 3 "Exit" \
-2>"$CURR_TTY") || exit
+2>"$CURR_TTY") || continue
 
 case $CH in
 
