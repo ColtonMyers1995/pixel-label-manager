@@ -33,7 +33,7 @@ safe_msgbox "All visible pictures in the system-list are called 'labels'. PIXEL 
 
 This tool allows you to create a label for any of the 3 view-types and saves them to the proper theme 'art' folder.
 
-After making a label for the view-type you prefer (icon, logo or image), create a custom collection using the ES custom collection menu. Match the name of the new custom collection to the name of the label you made. Your label will apply to your new custom collection based on view-type. To see created icon labels, set to icon-view; created logo labels, set to logo-view; created image labels, set to image-view; etc, in 'UI Settings / Theme Configuration'.
+After making a label for the view-type you prefer (icon, logo or image), create a custom collection using 'Game Collection Settings' in the ES menu. Match the name of the new custom collection to the name of the label you made. Your label will apply to your new custom collection based on view-type. To see created icon labels, set to 'Console Icons'; created logo labels, set to 'Console Logos'; created image labels, set to 'Console Images'; in 'UI Settings / Theme Configuration' in ES menu.
 
 -Individual custom collections may need to be enabled (Game Collection Settings)
 -'Group Unthemed Custom Collections' may need to be disabled (Game Collection Settings)
@@ -389,7 +389,7 @@ CH=$(dialog --output-fd 1 --menu "Pixel Toolkit" 17 60 8 \
 4 "Update Toolkit + Theme" \
 5 "Reset All Art - CAUTION" \
 6 "Restart EmulationStation" \
-7 "HOW TO USE" \
+7 "How To Use" \
 8 "Exit" \
 2>"$CURR_TTY") || exit
 
