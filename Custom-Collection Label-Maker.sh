@@ -347,8 +347,8 @@ post_message
 }
 
 ResetArt(){
-dialog --yesno "Are you sure?" 7 40 || return
-dialog --yesno "Are you VERY sure?" 7 40 || return
+dialog --yesno "Are you sure? All created labels will be deleted. (REQUIRES INTERNET)" 7 40 || return
+dialog --yesno "Are you VERY sure? ALL created labels will be DELETED. (CANNOT BE UNDONE)" 7 40 || return
 
 # Check internet before destructive reset
 ping -c 1 github.com >/dev/null 2>&1 || {
