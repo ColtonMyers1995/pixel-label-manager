@@ -27,6 +27,53 @@ safe_msgbox "Saved!
 A Custom Collection that uses this image's name will automatically assign the image!"
 }
 
+
+# ---------------- UPDATE (TOOL + THEME) ----------------
+UpdateToolkit(){
+dialog --yesno "Update Toolkit + Theme from GitHub?\nRequires internet connection." 8 60 || return
+
+# Check internet first
+ping -c 1 github.com >/dev/null 2>&1 || {
+    safe_msgbox "No internet connection. Update cancelled."
+    return
+}
+
+TMP="/tmp/pixel_update"
+rm -rf "$TMP"
+mkdir -p "$TMP"
+
+TOOL_GIT_URL="https://github.com/ColtonMyers1995/pixel-label-manager.git"
+TOOL_PATH="/roms/tools/Custom-Collection Label-Maker.sh"
+
+# Clone tool repo
+git clone "$TOOL_GIT_URL" "$TMP/tool" || {
+    safe_msgbox "Tool update failed"
+    return
+}
+
+# Clone theme repo
+git clone "$GITHUB_URL" "$TMP/theme" || {
+    safe_msgbox "Theme update failed"
+    return
+}
+
+# ---- TOOL UPDATE (FULL REPLACE) ----
+if [ -f "$TMP/tool/Custom-Collection Label-Maker.sh" ]; then
+    rm -f "$TOOL_PATH"
+    cp "$TMP/tool/Custom-Collection Label-Maker.sh" "$TOOL_PATH"
+    chmod +x "$TOOL_PATH"
+fi
+
+# ---- THEME UPDATE (MERGE / PRESERVE USER FILES) ----
+cp -rn "$TMP/theme/"* "$THEME_DIR/"
+cp -r "$TMP/theme/art2/"* "$THEME_DIR/art2/" 2>/dev/null || true
+cp -r "$TMP/theme/art3/"* "$THEME_DIR/art3/" 2>/dev/null || true
+cp -r "$TMP/theme/assets/"* "$THEME_DIR/assets/" 2>/dev/null || true
+
+safe_msgbox "Update complete! Restart tool to apply."
+}
+
+
 # ---- CORRECT OUTLINE (EDGE ONLY, NO BOX) ----
 apply_outline(){
 SRC="$1"
@@ -302,29 +349,43 @@ post_message
 ResetArt(){
 dialog --yesno "Are you sure?" 7 40 || return
 dialog --yesno "Are you VERY sure?" 7 40 || return
+
+# Check internet before destructive reset
+ping -c 1 github.com >/dev/null 2>&1 || {
+    safe_msgbox "No internet connection. Reset cancelled."
+    return
+}
+
 rm -rf "$THEME_DIR"
-git clone "$GITHUB_URL" "$THEME_DIR"
+
+git clone "$GITHUB_URL" "$THEME_DIR" || {
+    safe_msgbox "Reset failed. Theme not restored."
+    return
+}
+
 safe_msgbox "Theme reset complete!"
 }
 
 RestartES(){ systemctl restart emulationstation; }
 
 while true; do
-CH=$(dialog --output-fd 1 --menu "Pixel Toolkit" 15 50 6 \
+CH=$(dialog --output-fd 1 --menu "Pixel Toolkit" 15 50 7 \
 1 "Logo Maker" \
 2 "Icon Maker" \
 3 "Image Maker" \
-4 "Reset All Art - CAUTION" \
-5 "Restart EmulationStation" \
-6 "Exit" \
+4 "Update Toolkit + Theme" \
+5 "Reset All Art - CAUTION" \
+6 "Restart EmulationStation" \
+7 "Exit" \
 2>"$CURR_TTY") || exit
 
 case $CH in
 1) LogoMaker ;;
 2) IconMaker ;;
 3) SystemMaker ;;
-4) ResetArt ;;
-5) RestartES ;;
-6) exit ;;
+4) UpdateToolkit ;;
+5) ResetArt ;;
+6) RestartES ;;
+7) exit ;;
 esac
 done

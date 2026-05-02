@@ -16,6 +16,8 @@ Additional: PIXEL OS's unique design allows this tool to create up to 3 custom i
 - Font library
 - Color library
 - Automatic PNG generation and exporting
+- Built-in tool and theme updater
+- Restore art folders (erase all created labels)
 
 ## Installation
 Copy the script to:
@@ -37,6 +39,7 @@ chmod +x Custom-Collection Label-Maker.sh
 - Logos are more complex than icons/images, offering MANY customization options and multiple styles
 - Logos are automatically pushed to icon and image views if no custom icon or image PNG exists
   (create a separate 'icon' and/or 'image' style PNG(s) to avoid created logos appearing in icon/image views)
+- The user must be connected to internet to update or restore the theme/tool
 
 ## Designed for
 https://github.com/ColtonMyers1995/es-theme-PIXEL-OS
