@@ -382,25 +382,45 @@ safe_msgbox "Theme reset complete!"
 RestartES(){ systemctl restart emulationstation; }
 
 while true; do
-CH=$(dialog --output-fd 1 --menu "Pixel Toolkit" 17 60 8 \
-1 "Logo Maker" \
-2 "Icon Maker" \
-3 "Image Maker" \
-4 "Update Toolkit + Theme" \
-5 "Reset All Art - CAUTION" \
-6 "Restart EmulationStation" \
-7 "How To Use" \
-8 "Exit" \
+CH=$(dialog --output-fd 1 --menu "Pixel Toolkit" 17 60 3 \
+1 "Makers" \
+2 "Settings" \
+3 "Exit" \
 2>"$CURR_TTY") || exit
 
 case $CH in
+
+1)
+SUB=$(dialog --output-fd 1 --menu "Makers" 15 60 3 \
+1 "Logo Maker" \
+2 "Icon Maker" \
+3 "Image Maker" \
+2>"$CURR_TTY") || continue
+
+case $SUB in
 1) LogoMaker ;;
 2) IconMaker ;;
 3) SystemMaker ;;
-4) UpdateToolkit ;;
-5) ResetArt ;;
-6) RestartES ;;
-7) HowToUse ;;
-8) exit ;;
+esac
+;;
+
+2)
+SUB=$(dialog --output-fd 1 --menu "Settings" 17 60 4 \
+1 "Update Toolkit + Theme" \
+2 "Reset All Art - CAUTION" \
+3 "Restart EmulationStation" \
+4 "How To Use" \
+2>"$CURR_TTY") || continue
+
+case $SUB in
+1) UpdateToolkit ;;
+2) ResetArt ;;
+3) RestartES ;;
+4) HowToUse ;;
+esac
+;;
+
+3) exit ;;
+
 esac
 done
