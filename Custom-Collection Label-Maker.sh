@@ -184,8 +184,8 @@ S=$(dialog --output-fd 1 --menu "Icon/Text Spacing" 12 40 3 \
 2>"$CURR_TTY") || return 1
 case $S in
 1) echo 0 ;;
-2) echo 20 ;;
-3) echo 40 ;;
+2) echo 40 ;;
+3) echo 75 ;;
 esac
 }
 
