@@ -172,9 +172,9 @@ S=$(dialog --output-fd 1 --menu "Text Size" 12 40 3 \
 1 "Small" 2 "Medium" 3 "Big" \
 2>"$CURR_TTY") || return 1
 case $S in
-1) echo 14 ;;
-2) echo 36 ;;
-3) echo 64 ;;
+1) echo 24 ;;
+2) echo 52 ;;
+3) echo 84 ;;
 esac
 }
 
