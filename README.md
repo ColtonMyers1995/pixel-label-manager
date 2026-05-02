@@ -18,6 +18,7 @@ Additional: PIXEL OS's unique design allows this tool to create up to 3 custom i
 - Automatic PNG generation and exporting
 - Built-in tool and theme updater
 - Restore art folders (erase all created labels)
+- HOW TO USE section for beginners
 
 ## Installation
 Copy the script to:

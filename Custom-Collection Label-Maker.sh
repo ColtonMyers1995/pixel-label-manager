@@ -28,6 +28,19 @@ A Custom Collection that uses this image's name will automatically assign the im
 }
 
 
+HowToUse(){
+safe_msgbox "All visible pictures in the system-list are called 'labels'. PIXEL OS uses 3 system-list view-types (icons, logos and images). 
+
+This tool allows you to create a label for any of the 3 view-types and saves them to the proper theme 'art' folder.
+
+After making a label for the view-type you prefer (icon, logo or image), create a custom collection using the ES custom collection menu. Match the name of the new custom collection to the name of the label you made. Your label will apply to your new custom collection based on view-type. To see created icon labels, set to icon-view; created logo labels, set to logo-view; created image labels, set to image-view; etc, in 'UI Settings / Theme Configuration'.
+
+-Individual custom collections may need to be enabled (Game Collection Settings)
+-'Group Unthemed Custom Collections' may need to be disabled (Game Collection Settings)
+-ES may need to be restarted for a label to apply to a custom collection"
+}
+
+
 # ---------------- UPDATE (TOOL + THEME) ----------------
 UpdateToolkit(){
 dialog --yesno "Update Toolkit + Theme from GitHub?\nRequires internet connection." 8 60 || return
@@ -369,14 +382,15 @@ safe_msgbox "Theme reset complete!"
 RestartES(){ systemctl restart emulationstation; }
 
 while true; do
-CH=$(dialog --output-fd 1 --menu "Pixel Toolkit" 15 50 7 \
+CH=$(dialog --output-fd 1 --menu "Pixel Toolkit" 17 60 8 \
 1 "Logo Maker" \
 2 "Icon Maker" \
 3 "Image Maker" \
 4 "Update Toolkit + Theme" \
 5 "Reset All Art - CAUTION" \
 6 "Restart EmulationStation" \
-7 "Exit" \
+7 "HOW TO USE" \
+8 "Exit" \
 2>"$CURR_TTY") || exit
 
 case $CH in
@@ -386,6 +400,7 @@ case $CH in
 4) UpdateToolkit ;;
 5) ResetArt ;;
 6) RestartES ;;
-7) exit ;;
+7) HowToUse ;;
+8) exit ;;
 esac
 done
