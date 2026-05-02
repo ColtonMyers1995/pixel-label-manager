@@ -348,7 +348,7 @@ post_message
 
 ResetArt(){
 dialog --yesno "Are you sure? (REQUIRES INTERNET)" 7 40 || return
-dialog --yesno "Are you SURE? (DELETE CREATED LABELS)" 7 40 || return
+dialog --yesno "Are you SURE? (DELETE LABELS)" 7 40 || return
 
 # Check internet before destructive reset
 ping -c 1 github.com >/dev/null 2>&1 || {
