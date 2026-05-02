@@ -172,9 +172,9 @@ S=$(dialog --output-fd 1 --menu "Text Size" 12 40 3 \
 1 "Small" 2 "Medium" 3 "Big" \
 2>"$CURR_TTY") || return 1
 case $S in
-1) echo 16 ;;
-2) echo 32 ;;
-3) echo 48 ;;
+1) echo 14 ;;
+2) echo 36 ;;
+3) echo 64 ;;
 esac
 }
 
@@ -183,9 +183,9 @@ S=$(dialog --output-fd 1 --menu "Icon/Text Spacing" 12 40 3 \
 1 "Close" 2 "Normal" 3 "Far" \
 2>"$CURR_TTY") || return 1
 case $S in
-1) echo 1 ;;
-2) echo 8 ;;
-3) echo 16 ;;
+1) echo 0 ;;
+2) echo 16 ;;
+3) echo 32 ;;
 esac
 }
 
