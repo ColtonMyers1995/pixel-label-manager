@@ -48,7 +48,7 @@ chmod +x Pixel-Label Dependency-Installer.sh
 https://github.com/ColtonMyers1995/es-theme-PIXEL-OS
 
 ## Legalities
-This tool is open source and is free to be altered, converted for other themes or uses
+This tool is open source and is free to be altered/converted/repurposed for other themes or uses
 
 
 ## Simple Walkthrough of tool
