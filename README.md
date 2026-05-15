@@ -6,7 +6,7 @@ The tool operates within ArkOS, giving users a full label-making toolkit.
 The created labels can be applied directly to custom-collections per view (icons, logos, images)
 
 Additional: PIXEL OS's unique design allows this tool to create up to 3 custom images per target name, 1 for each view (icons, logos, images)
-            (Creating a logo/icon/image with the same name will allow the user to see each created image/label while using the respective view.)
+            (Creating a logo/icon/image with the same name will allow the user to see each created label while using the respective view.)
 
 ## Features
 - Create logos, icons and images
@@ -33,8 +33,8 @@ chmod +x Pixel-Label Dependency-Installer.sh
 ```
 
 ## Usage
-- Run the dependency installer from Tools section
-- Launch tool from Tools section
+- Run the label-maker dependency installer from Tools section
+- Launch label-maker tool from Tools section
 - Design your logo/icon/image (choose style, color, sizes, text, image, padding, spacing, type (logo, icon, image))
 
 ## Additional Info
@@ -48,7 +48,7 @@ chmod +x Pixel-Label Dependency-Installer.sh
 https://github.com/ColtonMyers1995/es-theme-PIXEL-OS
 
 ## Legalities
-This tool is open source and is free to be altered, converted for other themes or uses
+This tool is open source and is free to be altered/converted/repurposed for other themes or uses
 
 
 ## Simple Walkthrough of tool
@@ -64,5 +64,16 @@ This tool is open source and is free to be altered, converted for other themes o
 8. Label is applied and visible
 9. [OPTIONAL] Use the tool to recreate the image again if you want to change parts of the label you created.
    (recreating a label after step 8 does not require restarting ES or remaking a custom-collection to apply)
+
+## Additional
+[R46S Information]
+If you are using the stock ArkOS image that came with R46S, use the R46S version.
+Alternatively, the regular version of this tool works with the RGB30 ArkOS patch on R46S.
+The patch-tool is available at:
+https://github.com/ColtonMyers1995/R46S-from-RGB30
+
+[Controller Carry-Over]
+Exiting the tool without restarting ES from within the toolkit will result in false controller outputs in ES.
+Restarting your system will restore regular controller outputs, but using the toolkit option is advised.
 
 
