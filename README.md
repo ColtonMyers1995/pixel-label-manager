@@ -57,7 +57,7 @@ This tool is open source and is free to be altered/converted/repurposed for othe
 2. Create logo/icon/image PNG
 3. Create custom-collection with same name as PNG you made
 4. Enable the custom collection
-5. Turn off "group unthemed systems"
+5. Turn off "group unthemed custom collections"
 6. Restart ES with quit-menu or toolkit
 7. Find your custom-collection in system list
    (make sure you are using the same view as the label style you made (logo/icon/image) in theme settings)
