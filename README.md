@@ -1,5 +1,5 @@
 # Pixel Label Manager (ArkOS 2.0) by ColtonMyers1995
-          Custom-Collection Label-Maker
+       Custom-Collection Label-Maker for es-theme-PIXEL-OS
 
 A controller-friendly tool for creating custom system-view labels for the PIXEL OS theme.
 The tool operates within ArkOS, giving users a full label-making toolkit.
